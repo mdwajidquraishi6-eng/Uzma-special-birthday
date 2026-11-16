@@ -16,110 +16,109 @@ HTML
 
 body {
   min-height: 100vh;
-  background: radial-gradient(ellipse at center, #451329, #170610 75%);
+  background: radial-gradient(circle, #64203e, #250d1b 65%, #100710);
   color: white;
   font-family: Georgia, serif;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
   overflow: hidden;
 }
 
 .container {
-  width: 100%;
-  padding: 25px 15px;
+  padding: 25px;
   position: relative;
   z-index: 2;
 }
 
 .heart {
   font-size: 55px;
-  color: #ff4b91;
-  text-shadow: 0 0 20px #ff176b;
-  animation: heartbeat 1.5s infinite;
+  color: #ff80b5;
+  text-shadow: 0 0 25px #ff1680;
+  animation: beat 1.3s infinite;
 }
 
 h1 {
-  font-size: clamp(40px, 8vw, 65px);
-  color: #ffc1d9;
-  margin: 22px 0;
-  text-shadow: 0 0 20px #ff438b;
+  font-size: 55px;
   font-style: italic;
+  color: #ffc2dc;
+  margin: 20px 0;
+  text-shadow: 0 0 20px #ff4b91;
 }
 
 h2 {
-  font-size: clamp(30px, 6vw, 48px);
-  color: #ff6caa;
-  margin-bottom: 25px;
-  text-shadow: 0 0 15px #ff287e;
+  font-size: 36px;
+  color: #ff8dbb;
+  margin-bottom: 20px;
 }
 
 p {
   font-size: 19px;
   line-height: 1.8;
-  color: #ffe1ed;
-  font-style: italic;
+  color: #ffe2ed;
 }
 
 .rose {
-  font-size: 65px;
-  margin: 22px;
-  filter: drop-shadow(0 0 12px #ff4b75);
+  font-size: 70px;
+  margin: 20px;
+  filter: drop-shadow(0 0 15px pink);
 }
 
 button {
-  margin-top: 20px;
-  padding: 16px 32px;
-  border: 2px solid #ff8fbd;
+  margin-top: 25px;
+  padding: 16px 30px;
+  border: 1px solid #ffb1d0;
   border-radius: 40px;
-  background: linear-gradient(45deg, #a90049, #ff367f);
+  background: linear-gradient(45deg, #b51d61, #ff5799);
   color: white;
   font-size: 17px;
-  box-shadow: 0 0 20px #ff287e;
+  box-shadow: 0 0 25px #ff4b91;
   cursor: pointer;
 }
 
-button:hover {
-  box-shadow: 0 0 35px #ff287e;
+button:active {
+  transform: scale(.95);
 }
 
-.floating {
+.petal {
   position: fixed;
-  color: #ff609d;
-  opacity: 0.55;
-  animation: float 7s linear infinite;
+  top: -30px;
+  color: #ff80ae;
+  animation: fall 8s linear infinite;
   pointer-events: none;
 }
 
-.f1 { left: 10%; top: 90%; }
-.f2 { left: 80%; top: 90%; animation-delay: 2s; }
-.f3 { left: 45%; top: 95%; animation-delay: 4s; }
+.p1 { left: 10%; animation-delay: 0s; }
+.p2 { left: 35%; animation-delay: 2s; }
+.p3 { left: 65%; animation-delay: 4s; }
+.p4 { left: 90%; animation-delay: 1s; }
 
-@keyframes heartbeat {
+@keyframes beat {
   50% { transform: scale(1.2); }
 }
 
-@keyframes float {
-  from { transform: translateY(0); opacity: 0.6; }
-  to { transform: translateY(-110vh); opacity: 0; }
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="floating f1">♥️</div>
-<div class="floating f2">♥️</div>
-<div class="floating f3">♥️</div>
+<div class="petal p1">♥️</div>
+<div class="petal p2">♥️</div>
+<div class="petal p3">♥️</div>
+<div class="petal p4">♥️</div>
 
 <div class="container">
-
-  <div class="heart">♡</div>
+  <div class="heart">❤️</div>
 
   <h1>Dear Uzma</h1>
 
-  <h2>Happy Birthday!</h2>
+  <h2>Happy Birthday! 🎂</h2>
 
   <p>
     You are my favourite person...<br>
@@ -130,12 +129,13 @@ button:hover {
 
   <p>I've made something special for you...</p>
 
-  <button>🎁 Open Your Surprise →</button>
+  <button onclick="alert('Your special surprise is coming soon! ❤️')">
+    Open Your Surprise 💌
+  </button>
 
-  <p style="margin-top:25px;font-size:14px;">
+  <p style="font-size:14px;margin-top:25px;">
     Made with love ❤️
   </p>
-
 </div>
 
 </body>
