@@ -9,94 +9,134 @@ HTML
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #170b14, #3b1028, #160b18);
-    color: white;
-    font-family: Georgia, serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #451329, #170610 75%);
+  color: white;
+  font-family: Georgia, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
 .container {
-    padding: 25px;
+  width: 100%;
+  padding: 25px 15px;
+  position: relative;
+  z-index: 2;
 }
 
 .heart {
-    font-size: 48px;
-    animation: beat 1.5s infinite;
+  font-size: 55px;
+  color: #ff4b91;
+  text-shadow: 0 0 20px #ff176b;
+  animation: heartbeat 1.5s infinite;
 }
 
 h1 {
-    color: #ffb5d1;
-    font-size: 42px;
-    margin: 20px 0;
+  font-size: clamp(40px, 8vw, 65px);
+  color: #ffc1d9;
+  margin: 22px 0;
+  text-shadow: 0 0 20px #ff438b;
+  font-style: italic;
 }
 
 h2 {
-    font-size: 30px;
-    margin-bottom: 18px;
+  font-size: clamp(30px, 6vw, 48px);
+  color: #ff6caa;
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px #ff287e;
 }
 
 p {
-    color: #f5cddd;
-    font-size: 18px;
-    line-height: 1.7;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #ffe1ed;
+  font-style: italic;
 }
 
 .rose {
-    font-size: 65px;
-    margin: 20px;
+  font-size: 65px;
+  margin: 22px;
+  filter: drop-shadow(0 0 12px #ff4b75);
 }
 
 button {
-    margin-top: 30px;
-    padding: 15px 28px;
-    border: none;
-    border-radius: 30px;
-    background: #e94d91;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+  margin-top: 20px;
+  padding: 16px 32px;
+  border: 2px solid #ff8fbd;
+  border-radius: 40px;
+  background: linear-gradient(45deg, #a90049, #ff367f);
+  color: white;
+  font-size: 17px;
+  box-shadow: 0 0 20px #ff287e;
+  cursor: pointer;
 }
 
 button:hover {
-    background: #ff75ae;
+  box-shadow: 0 0 35px #ff287e;
 }
 
-@keyframes beat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+.floating {
+  position: fixed;
+  color: #ff609d;
+  opacity: 0.55;
+  animation: float 7s linear infinite;
+  pointer-events: none;
+}
+
+.f1 { left: 10%; top: 90%; }
+.f2 { left: 80%; top: 90%; animation-delay: 2s; }
+.f3 { left: 45%; top: 95%; animation-delay: 4s; }
+
+@keyframes heartbeat {
+  50% { transform: scale(1.2); }
+}
+
+@keyframes float {
+  from { transform: translateY(0); opacity: 0.6; }
+  to { transform: translateY(-110vh); opacity: 0; }
 }
 </style>
 </head>
 
 <body>
+
+<div class="floating f1">♥️</div>
+<div class="floating f2">♥️</div>
+<div class="floating f3">♥️</div>
+
 <div class="container">
 
-    <div class="heart">❤️</div>
+  <div class="heart">♡</div>
 
-    <h1>Dear Uzma</h1>
+  <h1>Dear Uzma</h1>
 
-    <h2>Happy Birthday! 🎂</h2>
+  <h2>Happy Birthday!</h2>
 
-    <p>
+  <p>
     You are my favourite person...<br>
     Today and always. ❤️
-    </p>
+  </p>
 
-    <div class="rose">🌹</div>
+  <div class="rose">🌹</div>
 
-    <button>Open Your Surprise 💌</button>
+  <p>I've made something special for you...</p>
+
+  <button>🎁 Open Your Surprise →</button>
+
+  <p style="margin-top:25px;font-size:14px;">
+    Made with love ❤️
+  </p>
 
 </div>
+
 </body>
 </html>
